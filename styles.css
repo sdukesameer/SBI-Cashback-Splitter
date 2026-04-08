@@ -520,10 +520,12 @@ body {
     border-radius: var(--radius-md);
     padding: 4px;
     margin-bottom: 16px;
+    flex-wrap: wrap;
 }
 
 .tab-btn {
     flex: 1;
+    min-width: 100px;
     padding: 8px 10px;
     border-radius: var(--radius-sm);
     font-size: 12px;
@@ -535,6 +537,7 @@ body {
     font-family: var(--font-body);
     transition: all 0.15s;
     text-align: center;
+    white-space: nowrap;
 }
 
 .tab-btn:hover {
@@ -628,6 +631,17 @@ tbody tr.is-credit td {
     opacity: 0.65;
 }
 
+/* Last-month cashback credit row — amber tinted */
+tbody tr.cb-credit-row td {
+    background: var(--amber-bg);
+    border-bottom: 1px solid var(--amber-border);
+}
+
+tbody tr.cb-credit-row:hover td {
+    background: var(--amber-bg);
+    filter: brightness(1.08);
+}
+
 .mono {
     font-family: var(--font-mono);
 }
@@ -696,6 +710,35 @@ tbody tr.is-credit td {
     background: var(--red-bg);
 }
 
+/* Fixed (non-editable) category label */
+.cat-fixed {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--amber);
+    background: var(--amber-bg);
+    border: 1px solid var(--amber-border);
+    border-radius: var(--radius-sm);
+    padding: 3px 8px;
+    white-space: nowrap;
+}
+
+/* Last-month cashback badge in description column */
+.badge-cb {
+    display: inline-block;
+    font-size: 9px;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    background: var(--amber-bg);
+    color: var(--amber);
+    border: 1px solid var(--amber-border);
+    border-radius: 4px;
+    padding: 1px 5px;
+    margin-right: 5px;
+    vertical-align: middle;
+    letter-spacing: 0.04em;
+}
+
 /* Cashback badges */
 .cb-pos {
     color: var(--green);
@@ -760,6 +803,35 @@ tbody tr.is-credit td {
     font-family: var(--font-mono);
 }
 
+.bill-line.separator {
+    border-bottom: 1px dashed var(--border2);
+    padding-bottom: 8px;
+    margin-bottom: 4px;
+}
+
+/* Informational lines (cashback rows) — slightly muted */
+.bill-line.info-line {
+    color: var(--text3);
+    font-size: 11px;
+}
+
+.bill-line.info-line .mono {
+    color: var(--amber);
+}
+
+/* Small tag inside bill labels e.g. "by SBI", "next month" */
+.info-tag {
+    font-size: 9px;
+    font-family: var(--font-mono);
+    background: var(--amber-bg);
+    color: var(--amber);
+    border: 1px solid var(--amber-border);
+    border-radius: 3px;
+    padding: 1px 4px;
+    margin-left: 4px;
+    vertical-align: middle;
+}
+
 .bill-line.total {
     border-top: 1px solid var(--border2);
     margin-top: 6px;
@@ -774,6 +846,17 @@ tbody tr.is-credit td {
 
 .bill-line.total .mono {
     font-size: 16px;
+}
+
+/* Total bill summary box */
+.total-bill-box {
+    background: var(--amber-bg) !important;
+    border-color: var(--amber-border) !important;
+}
+
+.total-bill-box h4 {
+    color: var(--amber) !important;
+    border-color: var(--amber-border) !important;
 }
 
 /* ─── Action Row ─────────────────────────────────────────────────────────── */
@@ -826,6 +909,17 @@ tbody tr.is-credit td {
 
 .btn-action.blue:hover {
     background: var(--blue);
+    color: #fff;
+}
+
+.btn-action.red {
+    background: var(--red-bg);
+    border-color: var(--red-border);
+    color: var(--red);
+}
+
+.btn-action.red:hover {
+    background: var(--red);
     color: #fff;
 }
 
