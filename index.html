@@ -29,8 +29,8 @@
       <div class="nav-actions">
         <span class="privacy-pill">🔒 merchant names only</span>
         <button class="icon-btn" id="themeBtn" onclick="toggleTheme()" title="Toggle theme">☀️</button>
-        <a class="icon-btn" href="https://github.com/sdukesameer/SBI-Cashback-Splitter/blob/main/README.md"
-          target="_blank" rel="noopener" title="Documentation / GitHub README">📖</a>
+        <a class="icon-btn" href="https://github.com/sdukesameer/AI-Trip-Planner" target="_blank" rel="noopener"
+          title="Documentation / GitHub README">📖</a>
       </div>
     </nav>
 
@@ -71,11 +71,35 @@
         <!-- Due box -->
         <div class="due-box" id="dueBox"></div>
 
-        <!-- Tabs (rendered dynamically by renderTabs()) -->
-        <div class="tab-bar" id="tabBar"></div>
+        <!-- Tabs -->
+        <div class="tab-bar">
+          <button class="tab-btn t-primary active" id="tab-primary" onclick="showTab('primary')">
+            🟢 Primary (MD SAMEER)
+          </button>
+          <button class="tab-btn t-addon" id="tab-addon" onclick="showTab('addon')">
+            🔵 Add-On (SHAHABUDDIN)
+          </button>
+          <button class="tab-btn t-bill" id="tab-bill" onclick="showTab('bill')">
+            🟡 Bill Split
+          </button>
+        </div>
 
-        <!-- Tab views (rendered dynamically by renderTabs()) -->
-        <div id="tabViews"></div>
+        <!-- Tab views -->
+        <div id="view-primary" class="tab-view">
+          <div class="table-wrap">
+            <table id="tablePrimary"></table>
+          </div>
+        </div>
+
+        <div id="view-addon" class="tab-view hidden">
+          <div class="table-wrap">
+            <table id="tableAddon"></table>
+          </div>
+        </div>
+
+        <div id="view-bill" class="tab-view hidden">
+          <div id="billContent"></div>
+        </div>
 
         <!-- Actions -->
         <div class="action-row">
